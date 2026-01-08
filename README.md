@@ -1,98 +1,164 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# 🚚 Delivery Dispatch Hero
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![NestJS](https://img.shields.io/badge/NestJS-E0234E?logo=nestjs&logoColor=white)](https://nestjs.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)](https://vercel.com/)
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+A comprehensive delivery management system designed to streamline order dispatch, driver assignment, and delivery tracking. Built with a modern full-stack architecture featuring a NestJS backend and React frontend.
 
-## Description
+## ✨ Features
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- 📦 **Order Management**: Create, track, and manage delivery orders with detailed information
+- 🚴‍♂️ **Driver Assignment**: Efficiently assign orders to available delivery drivers (motoboys)
+- 📍 **Real-time Tracking**: Monitor driver locations and delivery status
+- 🗺️ **Route Optimization**: Optimize delivery routes for better efficiency
+- 📊 **Statistics & Reports**: Generate insights on delivery performance and trends
+- 🔐 **User Authentication**: Secure login system with JWT authentication
+- ⚙️ **Advanced Settings**: Configure fees, integrations, user roles, and SLA monitoring
+- 📄 **PDF Generation**: Generate reports and delivery documents
+- 📦 **Order Batching**: Group orders for bulk processing
+- 💰 **Vales Module**: Manage delivery vouchers and allowances
 
-## Project setup
+## 🛠️ Tech Stack
 
+| Component | Technology | Description |
+|-----------|------------|-------------|
+| **Backend** | NestJS (Node.js) | Progressive Node.js framework |
+| **Frontend** | React 18 | Modern UI library |
+| **Language** | TypeScript | Typed JavaScript |
+| **Database** | SQLite | Lightweight database |
+| **Build Tool** | Vite | Fast frontend build tool |
+| **Styling** | Tailwind CSS | Utility-first CSS framework |
+| **UI Components** | shadcn/ui | Beautiful UI components |
+| **Package Manager** | Bun | Fast JavaScript runtime |
+| **Authentication** | JWT | JSON Web Tokens |
+| **Testing** | Jest | Testing framework |
+| **Deployment** | Vercel | Cloud platform |
+
+## 📋 Prerequisites
+
+- 🟢 Node.js (v16 or higher)
+- 📦 npm or bun
+- 🗄️ SQLite (included, no separate installation needed)
+
+## 🚀 Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/delivery-dispatch-hero.git
+   cd delivery-dispatch-hero
+   ```
+
+2. **Install backend dependencies:**
+   ```bash
+   cd backend
+   npm install
+   ```
+
+3. **Install frontend dependencies:**
+   ```bash
+   cd ../frontend
+   bun install
+   ```
+
+## ▶️ Running the Application
+
+### Backend
 ```bash
-$ npm install
+cd backend
+npm run start:dev
+```
+> 💡 The backend will run on `http://localhost:3000`
+
+### Frontend
+```bash
+cd frontend
+bun dev
+```
+> 💡 The frontend will run on `http://localhost:5173`
+
+## 🔗 API Endpoints
+
+### 🔐 Authentication
+- `POST /auth/login` - User login
+
+### 🚴‍♂️ Motoboys (Drivers)
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/motoboy` | Get all drivers |
+| POST | `/motoboy` | Create new driver |
+| PUT | `/motoboy/:id` | Update driver |
+| DELETE | `/motoboy/:id` | Delete driver |
+
+### 📦 Pedidos (Orders)
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/pedido` | Get all orders |
+| POST | `/pedido` | Create new order |
+| PUT | `/pedido/:id` | Update order |
+| DELETE | `/pedido/:id` | Delete order |
+
+### 📊 Statistics
+- `GET /statistics` - Get delivery statistics
+
+## 📁 Project Structure
+
+```
+delivery-dispatch-hero/
+├── backend/
+│   ├── src/
+│   │   ├── auth/          # 🔐 Authentication module
+│   │   ├── motoboy/       # 🚴‍♂️ Driver management
+│   │   ├── pedido/        # 📦 Order management
+│   │   └── statistics/    # 📊 Statistics and reports
+│   ├── test/              # 🧪 End-to-end tests
+│   └── database.sqlite    # 🗄️ SQLite database
+├── frontend/
+│   ├── src/
+│   │   ├── components/    # 🧩 Reusable UI components
+│   │   ├── pages/         # 📄 Application pages
+│   │   ├── hooks/         # 🪝 Custom React hooks
+│   │   └── lib/           # 🛠️ Utilities and API functions
+│   └── public/            # 📁 Static assets
+├── package.json           # 📦 Root package configuration
+├── vercel.json            # ☁️ Vercel deployment config
+└── README.md              # 📖 This file
 ```
 
-## Compile and run the project
+## 🧪 Testing
 
+### Backend Tests
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+cd backend
+npm run test          # Unit tests
+npm run test:e2e      # End-to-end tests
+npm run test:cov      # Test coverage
 ```
 
-## Run tests
+## ☁️ Deployment
 
-```bash
-# unit tests
-$ npm run test
+The project is configured for deployment on Vercel:
 
-# e2e tests
-$ npm run test:e2e
+1. Connect your GitHub repository to Vercel
+2. Configure the build settings:
+   - **Frontend**: Root directory `frontend`, build command `bun run build`
+   - **Backend**: Root directory `backend`, build command `npm run build`
+3. Deploy automatically on push or manually trigger deployment
 
-# test coverage
-$ npm run test:cov
-```
+## 🤝 Contributing
 
-## Deployment
+1. Fork the repository 🍴
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -am 'Add new feature'`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Submit a pull request 📝
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+## 📄 License
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+## 🆘 Support
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+For support, please open an issue in the GitHub repository or contact the development team.
